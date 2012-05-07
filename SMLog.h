@@ -5,9 +5,16 @@
 //  Copyright 2011 Fidelis Factory. All rights reserved.
 //
 
+// If this options is set to 1, Line number and funtion name are added to the log.  
+#define ADD_INFORMATION 0
+
 // Logs only in DEBUG mode.
 #ifdef DEBUG
-#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   if ADD_INFORMATION 
+#       define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#   else
+#       define DLog(fmt, ...) NSLog((fmt), ##__VA_ARGS__);
+#   endif
 #else
 #   define DLog(...)
 #endif
