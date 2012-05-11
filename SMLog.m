@@ -67,7 +67,11 @@ static SMLogger *aLogger;
 
 - (void)log:(NSString *)text level:(SMLogLevel)level
 {
-    NSLog(@"%@ %@", [SMLogger nameForLogLevel:level], text);
+    // Check if the given Level should be logged.
+    if (logLevels & level) 
+    {
+        NSLog(@"%@ %@", [SMLogger nameForLogLevel:level], text);
+    }
 }
 
 + (void)logDebug:(NSString *)text
