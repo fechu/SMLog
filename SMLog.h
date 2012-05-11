@@ -10,7 +10,12 @@
 /**
  Define here if you want to use the Macros or the class.  
  */
-#define USE_LOGGING_MACROS 1
+#define USE_LOGGING_MACROS  1
+
+/**
+ Define if you want to use the SMLOGGER class. 
+ */
+#define USE_SMLOGGER        1
 
 /**
  If this options is set to 1, Line number and funtion name are added to the log.
@@ -18,24 +23,25 @@
 */
 #define ADD_INFORMATION 0
 
-/** The lowest level. Usually used for debugging while developing. */
-#define LEVEL_DEBUG     @"DEBUG"
-/** Information you want to log but are more than for debugging purposes. */
-#define LEVEL_NOTICE    @"NOTICE"
-/** Logs information about warnings*/
-#define LEVEL_WARNING   @"WARNING"
-/** Logs important messages */
-#define LEVEL_IMPORTANT @"IMPORTANT"
-/** Logs very important information about errors. */
-#define LEVEL_ERROR     @"ERROR"
-
-/** 
- The UILog is always avaliable it shows a UIAlertView with the logging message.
- */
-#define UILog(fmt, ...) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
 
 
 #if USE_LOGGING_MACROS 
+
+    /** The lowest level. Usually used for debugging while developing. */
+    #define LEVEL_DEBUG     @"DEBUG"
+    /** Information you want to log but are more than for debugging purposes. */
+    #define LEVEL_NOTICE    @"NOTICE"
+    /** Logs information about warnings*/
+    #define LEVEL_WARNING   @"WARNING"
+    /** Logs important messages */
+    #define LEVEL_IMPORTANT @"IMPORTANT"
+    /** Logs very important information about errors. */
+    #define LEVEL_ERROR     @"ERROR"
+
+    /** 
+     The UILog is always avaliable it shows a UIAlertView with the logging message.
+     */
+    #define UILog(fmt, ...) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
 
     // Logs only in DEBUG mode.
     #ifdef DEBUG
@@ -51,7 +57,11 @@
     // ALog always displays output regardless of the DEBUG setting
     #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
-#else
+#endif
+
+
+
+#if USE_SMLOGGER
 
 #import <Foundation/Foundation.h>
 
