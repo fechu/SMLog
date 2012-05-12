@@ -63,6 +63,11 @@
 
 #if USE_SMLOGGER
 
+/**
+ Shortcut for the shared logger.
+ */
+#define LOGGER [SMLogger sharedLogger]
+
 #import <Foundation/Foundation.h>
 
 /**
