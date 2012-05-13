@@ -74,9 +74,11 @@ static SMLogger *aLogger;
     }
 }
 
-+ (void)logDebug:(NSString *)text
++ (void)logDebug:(NSString *)text, ...
 {
-    [[SMLogger sharedLogger] logDebug:text];
+    va_list args;
+    va_start(args, text);
+    [[SMLogger sharedLogger] logDebug:[[NSString alloc] initWithFormat:text arguments:args]];
 }
 
 - (void)logDebug:(NSString *)text
@@ -84,9 +86,11 @@ static SMLogger *aLogger;
     [self log:text level:SMLogLevelDebug];
 }
 
-+ (void)logNotice:(NSString *)text
++ (void)logNotice:(NSString *)text, ...
 {
-    [[SMLogger sharedLogger] logNotice:text];
+    va_list args;
+    va_start(args, text);
+    [[SMLogger sharedLogger] logNotice:[[NSString alloc] initWithFormat:text arguments:args]];
 }
 
 - (void)logNotice:(NSString *)text
@@ -94,9 +98,11 @@ static SMLogger *aLogger;
     [self log:text level:SMLogLevelNotice];
 }
 
-+ (void)logWarning:(NSString *)text
++ (void)logWarning:(NSString *)text, ...
 {
-    [[SMLogger sharedLogger] logWarning:text];
+    va_list args;
+    va_start(args, text);
+    [[SMLogger sharedLogger] logWarning:[[NSString alloc] initWithFormat:text arguments:args]];
 }
 
 - (void)logWarning:(NSString *)text
@@ -104,9 +110,11 @@ static SMLogger *aLogger;
     [self log:text level:SMLogLevelWarning];
 }
 
-+ (void)logImportant:(NSString *)text
++ (void)logImportant:(NSString *)text, ...
 {
-    [[SMLogger sharedLogger] logImportant:text];
+    va_list args;
+    va_start(args, text);
+    [[SMLogger sharedLogger] logImportant:[[NSString alloc] initWithFormat:text arguments:args]];
 }
 
 - (void)logImportant:(NSString *)text
@@ -114,9 +122,11 @@ static SMLogger *aLogger;
     [self log:text level:SMLogLevelImportant];
 }
 
-+ (void)logError:(NSString *)text
++ (void)logError:(NSString *)text, ...
 {
-    [[SMLogger sharedLogger] logError:text];
+    va_list args;
+    va_start(args, text);
+    [[SMLogger sharedLogger] logError:[[NSString alloc] initWithFormat:text arguments:args]];
 }
 
 - (void)logError:(NSString *)text

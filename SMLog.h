@@ -115,35 +115,35 @@ typedef int SMLogLevel;
 /**
  Logs to the sharedLogger with the level SMLogLevelDebug.
  */
-+ (void)logDebug:(NSString *)text;
++ (void)logDebug:(NSString *)text, ...;
 /** @see SMLogger::logDebug: */
 - (void)logDebug:(NSString *)text;
 
 /**
  Logs to the sharedLogger with the level SMLogLevelNotice.
  */
-+ (void)logNotice:(NSString *)text;
++ (void)logNotice:(NSString *)text, ...;
 /** @see SMLogger::logNotice: */
 - (void)logNotice:(NSString *)text;
 
 /**
  Logs to the sharedLogger with the level SMLogLevelWarning.
  */
-+ (void)logWarning:(NSString *)text;
++ (void)logWarning:(NSString *)text, ...;
 /** @see SMLogger::logWarning: */
 - (void)logWarning:(NSString *)text;
 
 /**
  Logs to the sharedLogger with the level SMLogLevelImportant.
  */
-+ (void)logImportant:(NSString *)text;
++ (void)logImportant:(NSString *)text, ...;
 /** @see SMLogger::logImportant: */
 - (void)logImportant:(NSString *)text;
 
 /**
  Logs to the sharedLogger with the level SMLogLevelError.
  */
-+ (void)logError:(NSString *)text;
++ (void)logError:(NSString *)text, ...;
 /** @see SMLogger::logError: */
 - (void)logError:(NSString *)text;
 
