@@ -17,26 +17,7 @@
  */
 #define USE_SMLOGGER        1
 
-/**
- If this options is set to 1, Line number and funtion name are added to the log.
- This option takes only affect if you use the macros. 
-*/
-#define ADD_INFORMATION 0
-
-
-
 #if USE_LOGGING_MACROS 
-
-    /** The lowest level. Usually used for debugging while developing. */
-    #define LEVEL_DEBUG     @"DEBUG"
-    /** Information you want to log but are more than for debugging purposes. */
-    #define LEVEL_NOTICE    @"NOTICE"
-    /** Logs information about warnings*/
-    #define LEVEL_WARNING   @"WARNING"
-    /** Logs important messages */
-    #define LEVEL_IMPORTANT @"IMPORTANT"
-    /** Logs very important information about errors. */
-    #define LEVEL_ERROR     @"ERROR"
 
     /** 
      The UILog is always avaliable it shows a UIAlertView with the logging message.
@@ -45,17 +26,13 @@
 
     // Logs only in DEBUG mode.
     #ifdef DEBUG
-        #if ADD_INFORMATION 
-            #define DLog(level ,fmt, ...) NSLog((@"[%@]  %s [Line %d] " fmt), level, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-        #else
-            #define DLog(level ,fmt, ...) NSLog((@"[%@]  " fmt), level, ##__VA_ARGS__);
-        #endif
+        #define DLog(fmt, ...) NSLog((@"[DEBUG]  " fmt), ##__VA_ARGS__);
     #else
         #define DLog(...)
-    #endif
+    #endif 
 
     // ALog always displays output regardless of the DEBUG setting
-    #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+    #define ALog(fmt, ...) NSLog((@"[NOTICE] " fmt), ##__VA_ARGS__);
 
 #endif
 
