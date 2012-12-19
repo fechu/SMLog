@@ -7,6 +7,8 @@
 
 #import "SMLog.h"
 
+#if USE_SMLOGGER
+
 @interface SMLogger ()
 
 /**
@@ -171,3 +173,5 @@ static SMLogger *aLogger;
 }
 
 @end
+
+#endif

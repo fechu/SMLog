@@ -22,7 +22,7 @@
     /** 
      The UILog is always avaliable it shows a UIAlertView with the logging message.
      */
-    #define UILog(fmt, ...) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+    #define UILog(fmt, ...) {UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UILog Message" message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil]; [alert show]; }
 
     // Logs only in DEBUG mode.
     #ifdef DEBUG

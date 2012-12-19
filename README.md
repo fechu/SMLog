@@ -1,8 +1,8 @@
 #SMLog
-SMLogger ist eine klasse die das Logging auf iOS Geräten vereinfacht. Es ist möglich Nachrichten mit verschiedenen Leveln zu Loggen. Es ist konfigurierbar welche Level gelogt werden sollen. 
+SMLogger ist eine Klasse die das Logging auf in ObjC strukturierter macht. Es ist möglich Nachrichten mit verschiedenen Leveln zu Loggen und zu definieren, welche angezeigt werden sollen. 
 
 ##Anwendung
-Man kann auf 2 verschiedene wege Log Einträge erstellen. Die eine ist die Klasse SMLogger und die andere sind Makros.
+Man kann auf 2 verschiedene Wege Log Einträge erstellen. Die eine ist die Klasse SMLogger und die andere sind Makros.
 
 ###SMLogger 
 
