@@ -2,7 +2,7 @@
 SMLogger ist eine klasse die das Logging auf iOS Geräten vereinfacht. Es ist möglich Nachrichten mit verschiedenen Leveln zu Loggen. Es ist konfigurierbar welche Level gelogt werden sollen. 
 
 ##Anwendung
-Es kann auf 2 verschiedenen Wegen gelogt werden. Entweder mit der Klasse `SMLogger`oder über die Makros. 
+Man kann auf 2 verschiedene wege Log Einträge erstellen. Die eine ist die Klasse SMLogger und die andere sind Makros.
 
 ###SMLogger 
 
@@ -25,10 +25,11 @@ Das Resultat sieht dann so aus:
 	
 Zusätzlich zu all den Levels kann mit den Makros UILog verwendet werden. Dieses Makro zeigt den Text in einer UIAlertView an.
 
->Vorteil der Makros ist es, dass sie in der finalen Version automatisch nicht kompiliert werden.
+**Vorteil der Makros ist es, dass sie in der finalen Version automatisch nicht kompiliert werden.**
+
 
 ###Wechsel zwischen Makros und SMLogger
-Falls Sie sich mal entscheiden von den Makros zu SMLogger oder von SMLogger zu den Makros zu wechseln, können folgend Regex hilfreich sein.
+Falls Sie sich mal entscheiden von den Makros zu SMLogger oder von SMLogger zu den Makros zu wechseln, können folgende Regex hilfreich sein.
 
 **SMLogger zu Makros** 
 
