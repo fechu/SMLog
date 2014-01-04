@@ -23,6 +23,8 @@ Das Resultat sieht dann so aus:
 
 	[DEBUG]   Ölstand: 0.756
 	
+Für das einfache loggen von `NSError` objekten gibt es das Makr `DLogError(error)`. Falls `error` nicht `nil` ist werden `description` und `userInfo` ausgegeben. 
+	
 Zusätzlich zu all den Levels kann mit den Makros UILog verwendet werden. Dieses Makro zeigt den Text in einer UIAlertView an.
 
 **Vorteil der Makros ist es, dass sie in der finalen Version automatisch nicht kompiliert werden.**

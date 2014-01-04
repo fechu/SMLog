@@ -27,9 +27,11 @@
     // Logs only in DEBUG mode.
     #ifdef DEBUG
         #define DLog(fmt, ...) NSLog((@"[DEBUG]  " fmt), ##__VA_ARGS__);
+        #define DLogError(error) if (error) {DLog(@"Error: %@ %@", [error description], [error userInfo])}
     #else
         #define DLog(...)
-    #endif 
+        #define DlogError(error)
+    #endif
 
     // ALog always displays output regardless of the DEBUG setting
     #define ALog(fmt, ...) NSLog((@"[NOTICE] " fmt), ##__VA_ARGS__);
