@@ -30,7 +30,7 @@
         #define DLogError(error) if (error) {DLog(@"Error: %@ %@", [error description], [error userInfo])}
     #else
         #define DLog(...)
-        #define DlogError(error)
+        #define DLogError(error)
     #endif
 
     // ALog always displays output regardless of the DEBUG setting
